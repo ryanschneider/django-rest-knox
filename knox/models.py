@@ -31,7 +31,7 @@ class AuthToken(models.Model):
     digest = models.CharField(
         max_length=CONSTANTS.DIGEST_LENGTH, primary_key=True)
     token_key = models.CharField(
-        max_length=CONSTANTS.TOKEN_KEY_LENGTH, db_index=True)
+        max_length=CONSTANTS.TOKEN_KEY_LENGTH, db_index=True, default='')
     salt = models.CharField(
         max_length=CONSTANTS.SALT_LENGTH, unique=True)
     user = models.ForeignKey(
